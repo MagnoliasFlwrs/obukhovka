@@ -204,9 +204,7 @@ if (siteSwiper) {
             }, 300);
         });
     });
-
 }
-
 
 Fancybox.bind("[data-fancybox]", {
 
@@ -239,7 +237,7 @@ dPriceCards.addEventListener('scroll', function () {
 priceCards.forEach(card => {
 
     card.addEventListener('mouseover', function () {
-        if (!isScrolling) {  // Проверяем, не скроллится ли контейнер
+        if (!isScrolling) {  //
             const cardImage = card.querySelector('img');
             const imageSrc = cardImage.getAttribute('src');
             fadeImage.setAttribute('src', imageSrc);
@@ -247,7 +245,7 @@ priceCards.forEach(card => {
         }
     });
 
-    card.addEventListener('mouseout', function () {
+    card.addEventListener('mouseleave', function () {
         fadeImageContainer.classList.remove('show');
     });
 });
