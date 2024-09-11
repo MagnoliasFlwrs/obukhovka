@@ -214,41 +214,34 @@ Fancybox.bind("[data-fancybox]", {
 
 
 const priceCards = document.querySelectorAll('.price-card');
-
-
 const fadeImageContainer = document.querySelector('.fade-image');
 const fadeImage = fadeImageContainer.querySelector('img');
 const dPriceCards = document.querySelector('.d-price-cards');
 
-let isScrolling = false;
+let scrollTimeout;
 
 dPriceCards.addEventListener('scroll', function () {
-    isScrolling = true;
-
     fadeImageContainer.classList.remove('show');
 
-
     clearTimeout(scrollTimeout);
-    let scrollTimeout = setTimeout(function () {
-        isScrolling = false;
+    scrollTimeout = setTimeout(function () {
+        // Вы можете добавить дополнительную логику здесь, если необходимо
     }, 100);
 });
 
 priceCards.forEach(card => {
-
-    card.addEventListener('mouseover', function () {
-        if (!isScrolling) {  //
-            const cardImage = card.querySelector('img');
-            const imageSrc = cardImage.getAttribute('src');
-            fadeImage.setAttribute('src', imageSrc);
-            fadeImageContainer.classList.add('show');
-        }
+    card.addEventListener('mouseenter', function () {
+        const cardImage = card.querySelector('img');
+        const imageSrc = cardImage.getAttribute('src');
+        fadeImage.setAttribute('src', imageSrc);
+        fadeImageContainer.classList.add('show');
     });
 
     card.addEventListener('mouseleave', function () {
         fadeImageContainer.classList.remove('show');
     });
 });
+
 
 
 // modal-forms
