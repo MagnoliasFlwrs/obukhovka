@@ -156,6 +156,7 @@ body {
                   line-height: normal;
                 }
                 &:hover {
+                  gap: 10px;
                   svg path {
                     stroke: var(--green);
                   }
@@ -577,6 +578,8 @@ body {
                 .img {
                   height: 358px;
                   width: 100%;
+                  border-radius: 5px;
+                  overflow: hidden;
                   img {
                     width: 100%;
                     height: 100%;
@@ -791,6 +794,8 @@ body {
           transform: translateY(-50%);
           height: 811px;
           width: calc((100% - 100px) / 2);
+          border-radius: 5px 0 0 5px;
+          overflow: hidden;
           @media (max-width: 1700px) {
             height: 600px;
           }
@@ -896,6 +901,9 @@ body {
       top: 50%;
       transform: translateY(-50%);
       width: 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
       &.changing-class {
         span {
           opacity: 0.3 !important;
@@ -912,6 +920,7 @@ body {
         align-items: center;
         gap: 10px;
         cursor: pointer;
+
         &.black {
           span {
             color: #000;
@@ -1173,6 +1182,7 @@ body {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 5px;
           }
         }
         .card-info  {
